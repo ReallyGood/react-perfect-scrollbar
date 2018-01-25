@@ -12,7 +12,8 @@
     "example": "webpack-dev-server --content-base example/ --config example/webpack.config.js",
     "lint": "eslint src",
     "test": "echo \"Test: TBD\"",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
