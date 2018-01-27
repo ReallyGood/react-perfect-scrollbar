@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib && rimraf dist",
-    "build:lib": "babel --presets es2015 src --out-dir lib",
+    "build:lib": "babel -presets es2015 src --out-dir lib",
     "build:umd": "cross-env NODE_ENV=development webpack --bail",
     "build:umd:min": "cross-env NODE_ENV=production webpack --bail",
     "build": "npm run clean && npm update && npm run lint && npm run build:lib && npm run build:umd && npm run build:umd:min",
