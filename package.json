@@ -10,7 +10,7 @@
     "build:umd:min": "cross-env NODE_ENV=production webpack --bail",
     "build": "npm run clean && npm update && npm run lint && npm run build:lib && npm run build:umd && npm run build:umd:min",
     "example": "webpack-dev-server --content-base example/ --config example/webpack.config.js",
-    "lint": "eslint src -s; exit 0",
+    "lint": "eslint src; exit 0",
     "test": "echo \"Test: TBD\"",
     "postversion": "git push && git push --tags",
     "postinstall": "npm run build"
