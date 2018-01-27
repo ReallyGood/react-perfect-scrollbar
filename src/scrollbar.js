@@ -70,7 +70,7 @@ export default class ScrollBar extends Component {
         return false;
     }
 
-    handleRef = (ref) => {
+    handleRef(ref) {
         this._container = ref;
         this.props.containerRef(ref);
     }
