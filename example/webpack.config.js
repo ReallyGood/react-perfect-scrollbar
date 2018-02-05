@@ -1,38 +1,31 @@
 /* eslint-disable */
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path'),
+    webpack = require('webpack');
 
 module.exports = {
-
     entry: path.join(__dirname, 'index.js'),
-
     output: {
         path: __dirname,
         filename: 'bundle.js',
-        publicPath: '/dist/',
+        publicPath: '/dist/'
     },
-
     resolve: {
         alias: {
-            'react-perfect-scrollbar': path.join(__dirname, '..', 'src'),
-        },
+            'react-perfect-scrollbar': path.join(__dirname, '..', 'src')
+        }
     },
-
     module: {
         rules: [
             {
                 test: /\.(jsx|js)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['es2015', 'stage-2', 'react'],
-                },
+                loader: 'babel-loader'
             },
             {
                 test: /\.(jpg|png|svg|ttf|eot)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'img/[hash].[ext]',
+                    name: 'img/[hash].[ext]'
                 },
             },
             {
@@ -41,11 +34,10 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                     'postcss-loader',
-                    'sass-loader',
-                ],
-            },
-        ],
+                    'sass-loader'
+                ]
+            }
+        ]
     },
-
-    devtool: 'source-map',
+    devtool: 'source-map'
 };

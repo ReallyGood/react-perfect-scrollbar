@@ -1,19 +1,18 @@
-/* eslint-disable */
-var webpack = require('webpack');
-var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var path = require('path');
-var env = process.env.NODE_ENV;
+const path = require('path'),
+    webpack = require('webpack'),
+    UglifyJsPlugin = webpack.optimize.UglifyJsPlugin,
+    ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var libraryName = '[name]';
+const env = process.env.NODE_ENV;
+const libraryName = '[name]';
 
-var plugins = [
+const plugins = [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
+        'process.env.NODE_ENV': JSON.stringify(env)
     })
 ];
-var outputFile;
 
+let outputFile;
 if (env === 'production') {
     plugins.push(new UglifyJsPlugin({
         sourceMap: true,
@@ -36,16 +35,12 @@ if (env === 'production') {
 }
 
 module.exports = {
-
+    context: path.resolve(__dirname, 'src'),
     entry: {
-        'react-perfect-scrollbar': [
-            path.join(__dirname, '/src/index.js'),
-            path.join(__dirname, '/src/styles.scss')
-        ]
+        'react-perfect-scrollbar': './index.js',
+        'react-perfect-scrollbar/styles.scss': './styles.scss'
     },
-
     devtool: 'source-map',
-
     output: {
         path: path.join(__dirname, 'dist'),
         filename: outputFile,
@@ -53,14 +48,12 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
-
     resolve: {
         modules: [
-            path.join(__dirname, "src"),
+            path.join(__dirname, "./"),
             "node_modules"
         ],
     },
-
     module: {
         rules: [
             {
@@ -97,7 +90,6 @@ module.exports = {
             }
         ]
     },
-
     externals: [
         {
             react: {
@@ -124,6 +116,5 @@ module.exports = {
             }
         }
     ],
-
     plugins: plugins
 };

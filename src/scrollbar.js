@@ -21,6 +21,7 @@ export default class ScrollBar extends Component {
         super(props);
 
         this._handlerByEvent = new Map();
+
     }
 
     componentDidMount() {
@@ -79,7 +80,7 @@ export default class ScrollBar extends Component {
         const { children, className } = this.props;
 
         return (
-            <div className={`scrollbar-container ${className}`} ref={this.handleRef}>
+            <div className={`scrollbar-container ${className}`} ref={this.handleRef.bind(this)}>
                 {children}
             </div>
         );
