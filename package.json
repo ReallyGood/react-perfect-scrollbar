@@ -54,6 +54,16 @@
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-react-jsx"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/goldenyz/react-perfect-scrollbar/issues"
   },
