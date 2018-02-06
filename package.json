@@ -25,11 +25,6 @@
     "react-perfect-scrollbar",
     "perfect-scrollbar-react"
   ],
-  "files": [
-    "dist",
-    "lib",
-    "src"
-  ],
   "author": "Allen Yang",
   "license": "MIT",
   "dependencies": {
