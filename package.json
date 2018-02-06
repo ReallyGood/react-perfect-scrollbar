@@ -11,8 +11,7 @@
     "build": "npm run clean && npm update && npm run build:lib && npm run build:umd && npm run build:umd:min",
     "example": "webpack-dev-server --content-base example/ --config example/webpack.config.js",
     "test": "echo \"Test: TBD\"",
-    "postversion": "git push && git push --tags",
-    "postinstall": "npm run build"
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
