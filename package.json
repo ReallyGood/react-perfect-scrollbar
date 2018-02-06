@@ -12,7 +12,7 @@
     "example": "webpack-dev-server --content-base example/ --config example/webpack.config.js",
     "test": "echo \"Test: TBD\"",
     "postversion": "git push && git push --tags",
-    "postinstall": "npm run build"
+    "postinstall": "npm i && npm run build"
   },
   "repository": {
     "type": "git",
