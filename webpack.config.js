@@ -53,6 +53,7 @@ module.exports = {
             path.join(__dirname, "./"),
             "node_modules"
         ],
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
